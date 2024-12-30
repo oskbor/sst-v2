@@ -25,7 +25,7 @@ export const usePythonHandler = (): RuntimeHandler => {
   const sources = new Map<string, string>();
 
   async function findSrc(input: string) {
-    const hints = ["requirements.txt", "Pipfile", "poetry.lock"];
+    const hints = ["requirements.txt", "Pipfile", "poetry.lock", "uv.lock"];
     for (const hint of hints) {
       const result = await findAbove(input, hint);
       if (result) return result;
